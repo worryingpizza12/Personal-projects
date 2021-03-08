@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class main
+{
+  public static void main(String[] args) 
+  {
+    Scanner sc = new Scanner (System.in);
+
+    System.out.print("Enter the size of the arrays: ");
+    int size = sc.nextInt();
+
+    int[] myArray1 = new int[size];
+    int[] myArray2 = new int[size];
+
+    for (int i = 0; i < size; i++)
+    {
+      System.out.print("Enter array 1 slot " + i + ": ");
+      myArray1[i] = sc.nextInt();
+      System.out.print("Enter array 2 slot " + i + ": ");
+      myArray2[i] = sc.nextInt();
+    }
+    int flag = 0;
+    for (int j = 0; j < size; j++)
+    {
+      if (myArray1[j] != myArray2[j])
+      {
+        flag = 1;
+      }
+    }
+    if (flag == 1)
+    {
+      System.out.print("The arrays are not identical");
+    }
+    else
+    {
+      System.out.print("The arrays are identical");
+    }
+  }
+}
