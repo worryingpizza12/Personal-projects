@@ -1,0 +1,50 @@
+/*
+ * Mohammed Shaikh
+ * Assignment 3
+ *
+ * */
+import java.util.Scanner;
+class Assignment3C
+{
+  public static void main(String[] args) 
+  {
+    Scanner sc = new Scanner (System.in);
+
+    System.out.print("How many people in your party? ");
+    float people = sc.nextFloat();
+
+    System.out.print("What is the total cost of your bill? ");
+    float cost = sc.nextFloat();
+
+    if (people >= 6)
+    {
+      double cost2 = (double)cost;
+      double bill = cost2 + cost2 * 0.18;
+      float bill2 = (float)bill;
+
+      System.out.println("Your bill is $" + bill2);
+      System.out.print("Would you like to include an additional tip (Y/N)? ");
+      char tip = sc.next().charAt(0);
+
+      if (tip == 'Y')
+      {
+        System.out.print("How much? ");
+        float tip2 = sc.nextFloat();
+        float total = bill2 + tip2;
+        System.out.print("Total bill is: $" + total);
+      }
+      else if (tip == 'N')
+      {
+        System.out.print("Total bill is: $" + bill2);
+      }
+    }
+    else
+    {
+      System.out.println("Your bill is $" + cost);
+      System.out.print("How much for the tip? ");
+      float tip = sc.nextFloat();
+      float total = cost + tip;
+      System.out.print("Total bill is: $" + total);
+    }
+  }
+}
